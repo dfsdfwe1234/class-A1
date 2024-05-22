@@ -1,0 +1,11 @@
+import pandas as pd
+from sklearn.preprocessing import LabelEncoder
+
+df = pd.read_csv('/home/piai/공부/자료/2/Car.csv')
+pd.set_option('display.max_columns', None)
+
+
+print(df_new['Location'].unique()) # unique 한 값이 11개 이기 때문에, label encoding을 진행
+
+le = LabelEncoder()
+df['Location'] = le.fit_transform(df['Location'])
